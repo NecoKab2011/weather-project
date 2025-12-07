@@ -1,0 +1,59 @@
+.wrapper {
+  width: 900px;
+  height: 320px;
+  margin: 50px auto;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+
+.slider > div {
+  transition: all 0.5s ease;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.center {
+  width: 500px;
+  height: 320px;
+  z-index: 5;
+  transform: scale(1);
+  margin: 0 -100px;
+  cursor: default;
+}
+
+.side1 {
+  width: 360px;
+  height: 230px;
+  z-index: 4;
+  transform: scale(0.85);
+  margin: 0 -80px;
+}
+
+.side2 {
+  width: 300px;
+  height: 200px;
+  z-index: 3;
+  transform: scale(0.7);
+  margin: 0 -60px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  display: block;
+}

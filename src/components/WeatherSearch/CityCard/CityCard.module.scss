@@ -1,0 +1,116 @@
+.card {
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  padding: 20px 24px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: #333;
+
+  &__location {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__city {
+    color: rgba(0, 0, 0, 1);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    text-align: left;
+  }
+
+  &__country {
+    color: rgba(0, 0, 0, 1);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    text-align: right;
+  }
+
+  &__time {
+    color: rgba(0, 0, 0, 1);
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+
+  &__forecasts {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  &__forecastbtn,
+  &__bottombtn {
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: rgba(255, 179, 108, 1);
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 1);
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 12px;
+    cursor: pointer;
+    border: 2px solid #f0f0f0;
+    transition: all 250ms ease-in-out;
+
+    &:hover {
+      color: #ffb36c;
+      background-color: #fff;
+      border: 2px solid #ffb36c;
+    }
+  }
+
+  &__currentdate {
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    margin-top: 5px;
+  }
+
+  &__weatherimage {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  &__weathericon {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+
+  &__tempvalue {
+    color: rgba(0, 0, 0, 1);
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 15px;
+  }
+
+  &__bottomicon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+}
