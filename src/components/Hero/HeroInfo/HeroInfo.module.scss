@@ -1,15 +1,39 @@
 .heroinfo__box {
-  display: flex;
-  padding-left: 173px;
-  margin-bottom: 80px;
+  padding-left: 56px;
+  margin-bottom: 48px;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    padding-left: 0px;
+    margin-bottom: 64px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-left: 173px;
+    margin-bottom: 80px;
+  }
 }
 
 .heroinfo__text {
-  width: 345px;
-  font-size: 24px;
   font-weight: 500;
   color: #ffffff;
-  text-align: right;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: 24px;
+    width: 200px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    text-align: right;
+    font-size: 24px;
+    width: 345px;
+    margin-bottom: 0px;
+  }
 }
 
 .heroinfo__date {
@@ -17,11 +41,18 @@
   font-size: 24px;
   font-weight: 500;
   color: #ffffff;
+  margin-left: 20px;
+
+   @media screen and (max-width: 768px) {
+    text-align: center;
+  }
 }
 
 .heroinfo__line {
-  width: 3px;
-  height: 150px;
-  background-color: white;
-  margin: 0 50px;
+  @media screen and (min-width: 768px) {
+    width: 3px;
+    height: 150px;
+    background-color: white;
+    margin: 0 50px;
+  }
 }

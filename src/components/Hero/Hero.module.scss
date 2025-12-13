@@ -5,7 +5,6 @@
   background-position: center;
   background-size: cover;
   background-image: url(../../images/Hero/hero-bg.png);
-  
 }
 
 .hero__box {
@@ -14,36 +13,45 @@
 }
 
 .herosearch__box {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .herosearch__form {
-    display: flex;
+  display: flex;
 }
 
 .herosearch__input {
+  padding-left: 30px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  background-color: #d9d9d9;
+  color: #878787;
+  border-radius: 10px;
+  border: none;
+  margin-right: 15px;
+
+  @media screen and (max-width: 768px) {
+    width: 250px;
+    height: 42px;
+  }
+
+  @media screen and (min-width: 768px) {
     width: 625px;
     height: 42px;
-    padding-left: 30px;
-    padding-top: 13px;
-    padding-bottom: 13px;
-    background-color: #D9D9D9;
-    color: #878787;
-    border-radius: 10px;
-    border: none;
+  }
 }
 
 .herosearch__btn {
-    width: 45px;
-    height: 42px;
-    background-color: #FFB36C;
-    border-radius: 10px;
-    border: none;
-    padding: 9px 10px;
+  width: 45px;
+  height: 42px;
+  background-color: #ffb36c;
+  border-radius: 10px;
+  border: none;
+  padding: 9px 10px;
 }
 
 .herosearch__icon {
-    width: 25px;
-    height: 25px;
+  width: 25px;
+  height: 25px;
 }

@@ -7,6 +7,7 @@ import styles from "../Header/Header.module.scss";
 class Header extends Component {
   state = {
     isOpen: false,
+    isRegistered: false,
     name: "",
     email: "",
     password: "",
@@ -20,37 +21,22 @@ class Header extends Component {
     this.setState({ isOpen: false });
   };
 
-  handleKeyDown = (e) => {
-    if (e.key === "Escape") {
-      this.closeModal();
-    }
-  };
-
-  componentDidMount() {
-    document.addEventListener("keydown", this.handleKeyDown);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener("keydown", this.handleKeyDown);
-  }
-
   handleChange = (e) => {
-  this.setState({ [e.target.name]: e.target.value });
-};
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();
-
     this.setState({
       isOpen: false,
-      name: "",
+      isRegistered: true,
       email: "",
       password: "",
     });
   };
 
   render() {
-    const { isOpen, name, email, password } = this.state;
+    const { isOpen, isRegistered, name, email, password } = this.state;
 
     return (
       <header>
@@ -59,17 +45,25 @@ class Header extends Component {
             <a className={styles.header__logo} href="">
               <img src={logo} alt="" />
             </a>
+
             <ul className={styles.header__list}>
               <li className={styles.header__item}>Who we are</li>
               <li className={styles.header__item}>Contacts</li>
               <li className={styles.header__item}>Menu</li>
             </ul>
-            <button onClick={this.openModal} className={styles.header__btn}>
-              Sign Up
-            </button>
-            <a className={styles.header__user} href="">
-              <img src={user} alt="" />
-            </a>
+
+            {!isRegistered && (
+              <button onClick={this.openModal} className={styles.header__btn}>
+                Sign Up
+              </button>
+            )}
+
+            {isRegistered && (
+              <a className={styles.header__user} href="">
+                <img src={user} alt="" />
+                <span className={styles.header__username}>{name}</span>
+              </a>
+            )}
           </div>
 
           {isOpen && (
@@ -78,7 +72,6 @@ class Header extends Component {
                 <h1 className={styles.modal__title}>Sign up</h1>
                 <form
                   className={styles.modal__form}
-                  action=""
                   onSubmit={this.handleSubmit}
                 >
                   <ul className={styles.modal__list}>
@@ -86,7 +79,6 @@ class Header extends Component {
                       <p className={styles.modal__type}>Username</p>
                       <input
                         className={styles.modal__input}
-                        placeholder="Username"
                         type="text"
                         name="name"
                         value={name}
@@ -94,11 +86,11 @@ class Header extends Component {
                         required
                       />
                     </li>
+
                     <li className={styles.modal__item}>
                       <p className={styles.modal__type}>E-Mail</p>
                       <input
                         className={styles.modal__input}
-                        placeholder="E-Mail"
                         type="email"
                         name="email"
                         value={email}
@@ -106,11 +98,11 @@ class Header extends Component {
                         required
                       />
                     </li>
+
                     <li className={styles.modal__item}>
                       <p className={styles.modal__type}>Password</p>
                       <input
                         className={styles.modal__input}
-                        placeholder="Password"
                         type="text"
                         name="password"
                         value={password}
@@ -119,13 +111,12 @@ class Header extends Component {
                       />
                     </li>
                   </ul>
-                  <button
-                    className={styles.modal__btn}
-                    onClick={this.closeModal}
-                  >
+
+                  <button className={styles.modal__btn} type="submit">
                     Sign up
                   </button>
                 </form>
+
                 <p className={styles.modal__login}>
                   Already have an account? Log In
                 </p>

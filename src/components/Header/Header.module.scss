@@ -3,16 +3,36 @@
   align-items: center;
   padding-top: 15px;
   padding-bottom: 15px;
+  justify-content: space-between;
 }
 
 .header__logo {
-  margin-right: 111px;
+  @media screen and (min-width: 768px) {
+    margin-right: 57px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 111px;
+  }
 }
 
 .header__list {
   display: flex;
   gap: 45px;
   margin-right: 519px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-right: 153px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    gap: 45px;
+    margin-right: 519px;
+  }
 }
 
 .header__item {
@@ -32,6 +52,25 @@
   border-radius: 10px;
 }
 
+.header__user {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+}
+
+.header__user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.header__username {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
 .modal__backdrop {
   position: fixed;
   top: 0;
@@ -43,25 +82,70 @@
   height: 750px;
   background: rgba(0, 0, 0, 0.6);
   z-index: 1000;
+
+  @media screen and (max-width: 768px) {
+    width: 800px;
+    height: 554px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 1000px;
+    height: 750px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 1550px;
+    height: 750px;
+  }
 }
 
 .modal__box {
   background: #fff;
-  padding-top: 28px;
-  padding-bottom: 28px;
-  padding-left: 80px;
-  padding-right: 80px;
   border-radius: 25px;
-  min-width: 600px;
-  min-height: 534px;
-}
 
+  @media screen and (max-width: 768px) {
+    width: 293px;
+    height: 454px;
+    padding: 25px 25px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 400px;
+    height: 460px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    min-width: 600px;
+    min-height: 534px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
 .modal__title {
   display: flex;
   justify-content: center;
-  font-size: 28px;
   font-weight: 500;
-  margin-bottom: 40px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+    margin-bottom: 17px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
 }
 
 .modal__form {
@@ -84,8 +168,6 @@
 }
 
 .modal__input {
-  width: 440px;
-  height: 50px;
   border: none;
   border-radius: 10px;
   background-color: #e4e4e4;
@@ -93,27 +175,63 @@
   padding-left: 20px;
   font-size: 14px;
   font-weight: 500;
+
+  @media screen and (max-width: 768px) {
+    width: 243px;
+    height: 40px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 310px;
+    height: 40px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 440px;
+    height: 50px;
+  }
 }
 
 .modal__btn {
   display: flex;
   justify-content: center;
-  width: 114px;
-  height: 37px;
-  margin-left: 163px;
   padding-right: 30px;
   padding-left: 30px;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-size: 14px;
-  font-weight: 400;
-  margin-bottom: 15px;
   background-color: #ffb36c;
   border-radius: 10px;
+  margin-bottom: 15px;
+
+  @media screen and (max-width: 768px) {
+    width: 107px;
+    height: 35px;
+    margin-left: 65px;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 114px;
+    height: 37px;
+    margin-left: 100px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 114px;
+    height: 37px;
+    margin-left: 163px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
 }
 
 .modal__login {
-    text-align: center;
-    font-size: 10px;
-    font-weight: 500;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 500;
 }

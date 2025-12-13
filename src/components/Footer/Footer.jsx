@@ -27,25 +27,25 @@ export default function Footer() {
           <div className={styles.footer__socbox}>
             <h2 className={styles.footer__soctitle}>Contact us</h2>
             <div className={styles.footer__socicons}>
-              <a href="" className={styles.footer__instlink}>
+              <a href="https://www.instagram.com/" className={styles.footer__instlink}>
                 <img 
                 className={styles.footer__instimage} 
                 src={insta} 
-                alt="#"
+                alt="https://www.instagram.com/"
                 ></img>
               </a>
-              <a href="" className={styles.footer__facebooklink}>
+              <a href="https://www.facebook.com/" className={styles.footer__facebooklink}>
                 <img
                   className={styles.footer__facebookimage}
                   src={facebook}
-                  alt="#"
+                  alt="https://www.facebook.com/"
                 ></img>
               </a>
-              <a href="" className={styles.footer__whatsapplink}>
+              <a href="https://www.whatsapp.com/" className={styles.footer__whatsapplink}>
                 <img
                   className={styles.footer__whatsappimage}
                   src={whatsapp}
-                  alt="#"
+                  alt="https://www.whatsapp.com/"
                 ></img>
               </a>
             </div>

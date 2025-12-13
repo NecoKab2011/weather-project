@@ -44,7 +44,7 @@ export const CityCard = ({
     const month = d.getMonth();
     const year = d.getFullYear();
     const weekday = d.toLocaleString("en-US", { weekday: "long" });
-    return `${day}.${month}.${year} ${weekday}`;
+    return `${day}.${month}.${year} | ${weekday}`;
   }, [city.dt]);
 
   return (

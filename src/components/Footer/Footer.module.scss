@@ -6,8 +6,12 @@
   &__box {
     display: flex;
     justify-content: left;
-    gap: 100px;
+    gap: 30px;
     padding-top: 40px;
+
+    @media screen and (min-width: 768px) {
+  gap: 100px;
+  }
   }
 
   &__logo {
