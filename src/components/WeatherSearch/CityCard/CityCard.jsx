@@ -1,4 +1,4 @@
-import { useWeather } from "../../context/WeatherContext";
+import { useWeatherContext } from "../../context/WeatherContext";
 import { useEffect, useMemo, useState } from "react";
 
 import refreshicon from "../../../images/WeatherCard/refresh.png";
@@ -16,14 +16,13 @@ export const CityCard = ({
   onHourly,
   onWeekly,
 }) => {
+  const { isRegistered } = useWeatherContext();
   const [localClock, setLocalClock] = useState("");
 
   const makeLocalTime = () => {
     if (!city?.timezone) return "";
-
     const baseMs = (city.dt ?? Date.now() / 1000) * 1000;
     const localMs = baseMs + city.timezone * 1000;
-
     return new Date(localMs).toLocaleTimeString("en-GB", {
       hour: "2-digit",
       minute: "2-digit",
@@ -40,11 +39,10 @@ export const CityCard = ({
 
   const formattedDate = useMemo(() => {
     const d = new Date((city.dt ?? Date.now() / 1000) * 1000);
-    const day = d.getDate();
-    const month = d.getMonth();
-    const year = d.getFullYear();
-    const weekday = d.toLocaleString("en-US", { weekday: "long" });
-    return `${day}.${month}.${year} | ${weekday}`;
+    return `${d.getDate()}.${d.getMonth()}.${d.getFullYear()} | ${d.toLocaleString(
+      "en-US",
+      { weekday: "long" }
+    )}`;
   }, [city.dt]);
 
   return (
@@ -65,8 +63,11 @@ export const CityCard = ({
         </button>
 
         <button
-          className={styles.card__forecastbtn}
-          onClick={() => onWeekly(city)}
+          className={`${styles.card__forecastbtn} ${
+            !isRegistered ? styles.card__forecastbtn_disabled : ""
+          }`}
+          onClick={() => isRegistered && onWeekly(city)}
+          disabled={!isRegistered}
         >
           Weekly forecast
         </button>
@@ -95,7 +96,6 @@ export const CityCard = ({
             src={refreshicon}
             onClick={() => onRefresh(city)}
           />
-
           <img
             className={styles.card__bottomicon}
             src={hearticon}
@@ -103,7 +103,12 @@ export const CityCard = ({
           />
         </div>
 
-        <button className={styles.card__bottombtn} onClick={() => onMore(city)}>
+        <button
+          className={`${styles.card__bottombtn} ${
+            !isRegistered ? styles.card__forecastbtn_disabled : ""
+          }`}
+          onClick={() => isRegistered && onMore(city)}
+          disabled={!isRegistered}>
           See more
         </button>
 

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Container } from "../Container/Container";
 import styles from "./Interaction.module.scss";
 
-const API_URL = `https://gnews.io/api/v4/search?q=animals OR pets&lang=en&apikey=2e0d0ca5b345cb7e73dabf8c4753d9da`;
+const API_URL = "https://gnews.io/api/v4/search?q=animals OR pets&lang=en&apikey=e9ad307d5820024d93cce1f8f7bde64d";
 
 const Interaction = () => {
   const [articles, setArticles] = useState([]);

@@ -50,6 +50,15 @@
   margin-right: 27px;
   background-color: #ffb36c;
   border-radius: 10px;
+   cursor: pointer;
+    border: 2px solid #fff;
+    transition: all 250ms ease-in-out;
+
+    &:hover {
+      color: #ffb36c;
+      background-color: #fff;
+      border: 2px solid #ffb36c;
+    }
 }
 
 .header__user {
@@ -202,6 +211,15 @@
   background-color: #ffb36c;
   border-radius: 10px;
   margin-bottom: 15px;
+   cursor: pointer;
+    border: 2px solid #f0f0f0;
+    transition: all 250ms ease-in-out;
+
+    &:hover {
+      color: #ffb36c;
+      background-color: #fff;
+      border: 2px solid #ffb36c;
+    }
 
   @media screen and (max-width: 768px) {
     width: 107px;

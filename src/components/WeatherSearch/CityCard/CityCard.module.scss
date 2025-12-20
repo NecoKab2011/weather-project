@@ -67,6 +67,11 @@
     }
   }
 
+  &__forecastbtn_disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
   &__currentdate {
     text-align: center;
     color: rgba(0, 0, 0, 1);
@@ -101,6 +106,27 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 10px;
+  }
+
+  &__bottombtn {
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: rgba(255, 179, 108, 1);
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 1);
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 12px;
+    cursor: pointer;
+    border: 2px solid #f0f0f0;
+    transition: all 250ms ease-in-out;
+
+    &:hover {
+      color: #ffb36c;
+      background-color: #fff;
+      border: 2px solid #ffb36c;
+    }
   }
 
   &__actions {

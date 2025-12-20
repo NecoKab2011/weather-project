@@ -5,6 +5,8 @@ const WeatherContext = createContext();
 const API_KEY = "0439257ddcafa13535e8fbef748608c7";
 
 export const WeatherProvider = ({ children }) => {
+  const [isRegistered, setIsRegistered] = useState(false);
+
   const [localRecents, setLocalRecents] = useState(() => {
     try {
       const saved = localStorage.getItem("recents");
@@ -50,7 +52,9 @@ export const WeatherProvider = ({ children }) => {
 
   const updateAllRecents = async () => {
     if (!localRecents || localRecents.length === 0) return;
+
     let hasChanges = false;
+
     const updatedCities = await Promise.all(
       localRecents.map(async (city) => {
         try {
@@ -74,9 +78,9 @@ export const WeatherProvider = ({ children }) => {
           if (JSON.stringify(newCityData) !== JSON.stringify(city)) {
             hasChanges = true;
           }
+
           return newCityData;
-        } catch (err) {
-          console.log(`Не вдалося оновити ${city.name}`);
+        } catch {
           return city;
         }
       })
@@ -109,6 +113,8 @@ export const WeatherProvider = ({ children }) => {
   return (
     <WeatherContext.Provider
       value={{
+         isRegistered,
+        setIsRegistered,
         localRecents,
         setLocalRecents,
         addToRecents,
@@ -122,4 +128,6 @@ export const WeatherProvider = ({ children }) => {
   );
 };
 
-export const useWeatherContext = () => useContext(WeatherContext);
+export const useWeatherContext = () => {
+  return useContext(WeatherContext);
+};
